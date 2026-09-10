@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Danny Phantom | Ficha de Personaje</title>
 
-
+  
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -13,23 +13,46 @@
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
 
   <style>
+    
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
     :root {
       --bg-dark: #070d18;
       --card-outer: #102131;
       --card-inner: #3a758d;
       --accent-badge: #d49a37;
-      --text-gold: #f4c055;
+      --ghost-cyan: #74d8ff;
       --red-bar: #e74c3c;
       --teal-bar: #2ecc71;
       --blue-bar: #3498db;
       --yellow-bar: #f39c12;
     }
 
+    
     body {
       font-family: 'Poppins', sans-serif;
       background-color: #f7fafc;
       color: #2d3748;
       min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    main {
+      flex: 1;
+    }
+
+    footer {
+      background-color: var(--bg-dark);
+      color: #8fa0b5;
+      padding: 1.8rem 1.5rem;
+      text-align: center;
+      font-size: 0.85rem;
+      border-top: 2px solid #1c364d;
     }
 
     
@@ -73,7 +96,6 @@
       height: 100%;
       object-fit: cover;
       object-position: top center;
-      transform: scale(1.18);
     }
 
     .badge-role {
@@ -100,7 +122,7 @@
     }
 
     .char-subtitle {
-      color: #74d8ff;
+      color: var(--ghost-cyan);
       font-size: 1rem;
       font-weight: 600;
       margin-bottom: 0.4rem !important;
@@ -184,13 +206,12 @@
       color: #ffffff;
       font-size: 1.2rem;
       font-weight: 900;
-      letter-spacing: 0.5px;
       margin-bottom: 0.1rem;
       text-transform: uppercase;
     }
 
     .card-info p {
-      color: #74d8ff;
+      color: var(--ghost-cyan);
       font-size: 0.75rem;
       font-weight: 600;
       letter-spacing: 0.5px;
@@ -261,13 +282,22 @@
       flex: 1;
       border-radius: 3px;
       background-color: #e2e8f0;
-      margin-bottom: 0 !important;
     }
 
     .block-red.active { background-color: var(--red-bar); }
     .block-teal.active { background-color: var(--teal-bar); }
     .block-blue.active { background-color: var(--blue-bar); }
     .block-yellow.active { background-color: var(--yellow-bar); }
+
+    
+    #historia {
+      scroll-margin-top: 2rem;
+      margin-bottom: 2rem;
+    }
+
+    #estadisticas {
+      scroll-margin-top: 2rem;
+    }
   </style>
 </head>
 <body>
@@ -276,8 +306,9 @@
   <header class="hero-banner">
     <div class="hero-container">
       
+      
       <div class="avatar-wrapper">
-        <img src="DANNY PHANTOM FACE.jpg" alt="Danny Phantom">
+        <img src="DANNY PHANTOM FACE.jpg" alt="Danny Phantom Avatar">
       </div>
 
       <div>
@@ -312,9 +343,11 @@
     </div>
   </header>
 
+  
   <main class="main-body">
     <div class="columns is-variable is-6">
 
+      
       <aside class="column is-4">
         <div class="card-hud">
           <div class="card-inner-box">
@@ -334,6 +367,7 @@
         </div>
       </aside>
 
+      
       <section class="column is-8">
         <div class="content-box">
           
@@ -355,6 +389,7 @@
           <article id="estadisticas">
             <h2 class="section-title">Estadísticas</h2>
 
+           
             <div class="stat-row">
               <div class="stat-header">
                 <span>Ataque</span>
@@ -399,7 +434,7 @@
               </div>
             </div>
 
-           
+            
             <div class="stat-row">
               <div class="stat-header">
                 <span>Lamento Fantasmagórico</span>
@@ -421,6 +456,11 @@
 
     </div>
   </main>
+
+  
+  <footer>
+    <p>© Proyecto Examen Parcial — Desarrollado con Bulma CSS y HTML5 Semántico</p>
+  </footer>
 
 </body>
 </html>
