@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Danny Phantom | Ficha de Personaje</title>
+
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --bg-dark: #070d18;
+      --card-outer: #102131;
+      --card-inner: #3a758d;
+      --accent-badge: #d49a37;
+      --text-gold: #f4c055;
+      --red-bar: #e74c3c;
+      --teal-bar: #2ecc71;
+      --blue-bar: #3498db;
+      --yellow-bar: #f39c12;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      background-color: #f7fafc;
+      color: #2d3748;
+      min-height: 100vh;
+    }
+
+    
+    .hero-banner {
+      background: radial-gradient(circle at 60% 40%, #152d42 0%, var(--bg-dark) 85%);
+      padding: 3rem 1.5rem 2.5rem 1.5rem;
+      border-bottom: 2px solid rgba(0, 229, 255, 0.2);
+    }
+
+    .hero-container {
+      max-width: 950px;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 2rem;
+    }
+
+    @media (min-width: 769px) {
+      .hero-container {
+        flex-direction: row;
+        align-items: center;
+        gap: 3rem;
+      }
+    }
+
+    .avatar-wrapper {
+      position: relative;
+      width: 175px;
+      height: 175px;
+      flex-shrink: 0;
+      border-radius: 50%;
+      border: 5px solid #23899e;
+      box-shadow: 0 0 25px rgba(0, 229, 255, 0.4);
+      background-color: #102534;
+      overflow: hidden;
+    }
+
+    .avatar-wrapper img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: top center;
+      transform: scale(1.18);
+    }
+
+    .badge-role {
+      background-color: var(--accent-badge);
+      color: #121212;
+      font-weight: 800;
+      font-size: 0.75rem;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      padding: 0.3rem 0.9rem;
+      border-radius: 4px;
+      display: inline-block;
+      margin-bottom: 0.6rem;
+    }
+
+    .char-title {
+      color: #ffffff;
+      font-size: 2.3rem;
+      font-weight: 900;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      line-height: 1.1;
+      margin-bottom: 0.2rem !important;
+    }
+
+    .char-subtitle {
+      color: #74d8ff;
+      font-size: 1rem;
+      font-weight: 600;
+      margin-bottom: 0.4rem !important;
+    }
+
+    .stars {
+      color: #f5b324;
+      font-size: 0.95rem;
+      margin-bottom: 0.8rem;
+    }
+
+    .char-desc {
+      color: #cfd9e5;
+      font-size: 0.88rem;
+      line-height: 1.6;
+      max-width: 580px;
+      margin-bottom: 1.3rem;
+    }
+
+    .btn-red {
+      background-color: #d9534f;
+      color: #ffffff;
+      font-weight: 600;
+      border: none;
+    }
+    .btn-red:hover {
+      background-color: #c9302c;
+      color: #ffffff;
+    }
+
+    .btn-light-custom {
+      background-color: #f8f9fa;
+      color: #666;
+      font-weight: 600;
+      border: none;
+    }
+    .btn-light-custom:hover {
+      background-color: #e2e6ea;
+      color: #333;
+    }
+
+    .main-body {
+      max-width: 1000px;
+      margin: 2.5rem auto;
+      padding: 0 1.5rem;
+    }
+
+    .card-hud {
+      background-color: var(--card-outer);
+      border-radius: 12px;
+      padding: 1.3rem;
+      box-shadow: 0 12px 28px rgba(0, 0, 0, 0.25);
+      border: 2px solid #1c364d;
+    }
+
+    .card-inner-box {
+      background-color: var(--card-inner);
+      border-radius: 8px;
+      overflow: hidden;
+      border: 3px solid #63a4be;
+      height: 360px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0.5rem;
+    }
+
+    .card-inner-box img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      filter: drop-shadow(0 0 10px rgba(0, 229, 255, 0.3));
+    }
+
+    .card-info {
+      text-align: center;
+      margin-top: 1rem;
+    }
+
+    .card-info h3 {
+      color: #ffffff;
+      font-size: 1.2rem;
+      font-weight: 900;
+      letter-spacing: 0.5px;
+      margin-bottom: 0.1rem;
+      text-transform: uppercase;
+    }
+
+    .card-info p {
+      color: #74d8ff;
+      font-size: 0.75rem;
+      font-weight: 600;
+      letter-spacing: 0.5px;
+      margin-bottom: 0.4rem;
+      text-transform: uppercase;
+    }
+
+    .content-box {
+      background: #ffffff;
+      border-radius: 10px;
+      padding: 2.2rem;
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.05);
+    }
+
+    .section-title {
+      font-size: 1.4rem;
+      font-weight: 800;
+      color: #172b4d;
+      border-left: 5px solid #d9534f;
+      padding-left: 0.75rem;
+      margin-bottom: 1.2rem;
+      line-height: 1.1;
+    }
+
+    .story-paragraph {
+      font-size: 0.92rem;
+      color: #4a5568;
+      line-height: 1.7;
+      margin-bottom: 1rem;
+    }
+
+    .banner-note {
+      background-color: #fff8e8;
+      border-left: 4px solid var(--accent-badge);
+      padding: 0.9rem 1.1rem;
+      border-radius: 4px;
+      font-size: 0.88rem;
+      color: #7a5413;
+      font-style: italic;
+      margin: 1.5rem 0 2rem 0;
+    }
+
+    .stat-row {
+      margin-bottom: 1.2rem;
+    }
+
+    .stat-header {
+      display: flex;
+      justify-content: space-between;
+      font-size: 0.86rem;
+      font-weight: 700;
+      color: #2d3748;
+      margin-bottom: 0.4rem;
+    }
+
+    .stat-ratio {
+      font-weight: 800;
+      color: #718096;
+    }
+
+    .stat-blocks {
+      display: flex;
+      gap: 5px;
+      height: 12px;
+    }
+
+    .stat-blocks .block {
+      flex: 1;
+      border-radius: 3px;
+      background-color: #e2e8f0;
+      margin-bottom: 0 !important;
+    }
+
+    .block-red.active { background-color: var(--red-bar); }
+    .block-teal.active { background-color: var(--teal-bar); }
+    .block-blue.active { background-color: var(--blue-bar); }
+    .block-yellow.active { background-color: var(--yellow-bar); }
+  </style>
+</head>
+<body>
+
+  
+  <header class="hero-banner">
+    <div class="hero-container">
+      
+      <div class="avatar-wrapper">
+        <img src="DANNY PHANTOM FACE.jpg" alt="Danny Phantom">
+      </div>
+
+      <div>
+        <span class="badge-role">DEFENSOR FANTASMA</span>
+        <h1 class="char-title">DANNY PHANTOM</h1>
+        <p class="char-subtitle">El Chico Mitad Fantasma</p>
+        
+        <div class="stars">
+          <i class="fa-solid fa-star"></i>
+          <i class="fa-solid fa-star"></i>
+          <i class="fa-solid fa-star"></i>
+          <i class="fa-solid fa-star"></i>
+          <i class="fa-regular fa-star"></i>
+        </div>
+
+        <p class="char-desc">
+          Protagonista de Danny Phantom (2004). Tras un accidente en el laboratorio de sus padres, Danny Fenton adquiere poderes espectrales para luchar contra los fantasmas que amenazan Amity Park. Tímido en su forma humana pero valiente como héroe.
+        </p>
+
+        <div class="buttons">
+          <a href="#historia" class="button btn-red is-small">
+            <span class="icon is-small"><i class="fa-solid fa-file-lines"></i></span>
+            <span>Ver historia</span>
+          </a>
+          <a href="#estadisticas" class="button btn-light-custom is-small">
+            <span class="icon is-small"><i class="fa-solid fa-chart-column"></i></span>
+            <span>Ver estadísticas</span>
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </header>
+
+  <main class="main-body">
+    <div class="columns is-variable is-6">
+
+      <aside class="column is-4">
+        <div class="card-hud">
+          <div class="card-inner-box">
+            <img src="DANNY PHANTOM.jpg" alt="Danny Phantom Coleccionable">
+          </div>
+          <div class="card-info">
+            <h3>DANNY PHANTOM</h3>
+            <p>EL CHICO MITAD FANTASMA</p>
+            <div class="stars">
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-regular fa-star"></i>
+            </div>
+          </div>
+        </div>
+      </aside>
+
+      <section class="column is-8">
+        <div class="content-box">
+          
+          
+          <article id="historia">
+            <h2 class="section-title">Historia</h2>
+            <p class="story-paragraph">
+              Danny crece en Amity Park, hijo de Jack y Maddie Fenton, cazadores de fantasmas. Su vida cambia cuando entra accidentalmente en el Portal Fenton, fusionando su ADN con ectoplasma.
+            </p>
+            <p class="story-paragraph">
+              Años después, Danny debe equilibrar su vida escolar con su deber de capturar fantasmas hostiles y proteger su ciudad. Junto a sus amigos Tucker y Sam, enfrenta villanos como Vlad Plasmius y Skulker.
+            </p>
+            <div class="banner-note">
+              Danny Phantom se emitió originalmente en Nickelodeon (2004-2007).
+            </div>
+          </article>
+
+          
+          <article id="estadisticas">
+            <h2 class="section-title">Estadísticas</h2>
+
+            <div class="stat-row">
+              <div class="stat-header">
+                <span>Ataque</span>
+                <span class="stat-ratio">3/5</span>
+              </div>
+              <div class="stat-blocks">
+                <div class="block block-red active"></div>
+                <div class="block block-red active"></div>
+                <div class="block block-red active"></div>
+                <div class="block block-red"></div>
+                <div class="block block-red"></div>
+              </div>
+            </div>
+
+           
+            <div class="stat-row">
+              <div class="stat-header">
+                <span>Defensa</span>
+                <span class="stat-ratio">3/5</span>
+              </div>
+              <div class="stat-blocks">
+                <div class="block block-teal active"></div>
+                <div class="block block-teal active"></div>
+                <div class="block block-teal active"></div>
+                <div class="block block-teal"></div>
+                <div class="block block-teal"></div>
+              </div>
+            </div>
+
+            
+            <div class="stat-row">
+              <div class="stat-header">
+                <span>Utilidad (Sentido Fantasma / Intangibilidad)</span>
+                <span class="stat-ratio">4/5</span>
+              </div>
+              <div class="stat-blocks">
+                <div class="block block-blue active"></div>
+                <div class="block block-blue active"></div>
+                <div class="block block-blue active"></div>
+                <div class="block block-blue active"></div>
+                <div class="block block-blue"></div>
+              </div>
+            </div>
+
+           
+            <div class="stat-row">
+              <div class="stat-header">
+                <span>Lamento Fantasmagórico</span>
+                <span class="stat-ratio">5/5</span>
+              </div>
+              <div class="stat-blocks">
+                <div class="block block-yellow active"></div>
+                <div class="block block-yellow active"></div>
+                <div class="block block-yellow active"></div>
+                <div class="block block-yellow active"></div>
+                <div class="block block-yellow active"></div>
+              </div>
+            </div>
+
+          </article>
+
+        </div>
+      </section>
+
+    </div>
+  </main>
+
+</body>
+</html>
