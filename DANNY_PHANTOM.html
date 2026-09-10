@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Danny Phantom | Ficha de Personaje</title>
 
-  
+ 
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -13,7 +13,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
 
   <style>
-    
+   
     *, *::before, *::after {
       box-sizing: border-box;
       margin: 0;
@@ -26,10 +26,6 @@
       --card-inner: #3a758d;
       --accent-badge: #d49a37;
       --ghost-cyan: #74d8ff;
-      --red-bar: #e74c3c;
-      --teal-bar: #2ecc71;
-      --blue-bar: #3498db;
-      --yellow-bar: #f39c12;
     }
 
     
@@ -255,16 +251,16 @@
     }
 
     .stat-row {
-      margin-bottom: 1.2rem;
+      margin-bottom: 1.3rem;
     }
 
     .stat-header {
       display: flex;
       justify-content: space-between;
-      font-size: 0.86rem;
+      font-size: 0.88rem;
       font-weight: 700;
       color: #2d3748;
-      margin-bottom: 0.4rem;
+      margin-bottom: 0.35rem;
     }
 
     .stat-ratio {
@@ -272,22 +268,11 @@
       color: #718096;
     }
 
-    .stat-blocks {
-      display: flex;
-      gap: 5px;
-      height: 12px;
+    
+    .progress-custom {
+      height: 12px !important;
+      margin-bottom: 0 !important;
     }
-
-    .stat-blocks .block {
-      flex: 1;
-      border-radius: 3px;
-      background-color: #e2e8f0;
-    }
-
-    .block-red.active { background-color: var(--red-bar); }
-    .block-teal.active { background-color: var(--teal-bar); }
-    .block-blue.active { background-color: var(--blue-bar); }
-    .block-yellow.active { background-color: var(--yellow-bar); }
 
     
     #historia {
@@ -305,7 +290,6 @@
   
   <header class="hero-banner">
     <div class="hero-container">
-      
       
       <div class="avatar-wrapper">
         <img src="DANNY PHANTOM FACE.jpg" alt="Danny Phantom Avatar">
@@ -389,34 +373,22 @@
           <article id="estadisticas">
             <h2 class="section-title">Estadísticas</h2>
 
-           
+            
             <div class="stat-row">
               <div class="stat-header">
                 <span>Ataque</span>
                 <span class="stat-ratio">4/5</span>
               </div>
-              <div class="stat-blocks">
-                <div class="block block-red active"></div>
-                <div class="block block-red active"></div>
-                <div class="block block-red active"></div>
-                <div class="block block-red active"></div>
-                <div class="block block-red"></div>
-              </div>
+              <progress class="progress progress-custom is-danger" value="80" max="100">80%</progress>
             </div>
 
-           
+            
             <div class="stat-row">
               <div class="stat-header">
                 <span>Defensa</span>
                 <span class="stat-ratio">4/5</span>
               </div>
-              <div class="stat-blocks">
-                <div class="block block-teal active"></div>
-                <div class="block block-teal active"></div>
-                <div class="block block-teal active"></div>
-                <div class="block block-teal active"></div>
-                <div class="block block-teal"></div>
-              </div>
+              <progress class="progress progress-custom is-primary" value="80" max="100">80%</progress>
             </div>
 
             
@@ -425,13 +397,7 @@
                 <span>Utilidad (Sentido Fantasma / Intangibilidad)</span>
                 <span class="stat-ratio">4/5</span>
               </div>
-              <div class="stat-blocks">
-                <div class="block block-blue active"></div>
-                <div class="block block-blue active"></div>
-                <div class="block block-blue active"></div>
-                <div class="block block-blue active"></div>
-                <div class="block block-blue"></div>
-              </div>
+              <progress class="progress progress-custom is-info" value="80" max="100">80%</progress>
             </div>
 
             
@@ -440,13 +406,7 @@
                 <span>Lamento Fantasmagórico</span>
                 <span class="stat-ratio">5/5</span>
               </div>
-              <div class="stat-blocks">
-                <div class="block block-yellow active"></div>
-                <div class="block block-yellow active"></div>
-                <div class="block block-yellow active"></div>
-                <div class="block block-yellow active"></div>
-                <div class="block block-yellow active"></div>
-              </div>
+              <progress class="progress progress-custom is-warning" value="100" max="100">100%</progress>
             </div>
 
           </article>
